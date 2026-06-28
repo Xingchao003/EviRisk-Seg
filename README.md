@@ -4,7 +4,8 @@ This repository provides the core implementation of **EviRisk-Seg** for binary m
 
 ## Features
 
-- UNet-based EviRisk-Seg model implementation.
+- EviRisk-Seg model implementation with UNet as the default backbone.
+- Optional evidential backbones: ramMamba and UltraLight-VMUNet.
 - Evidential training loss.
 - Training and testing entry scripts.
 - Segmentation metrics: Dice, IoU, Accuracy, Recall, and HD95.
@@ -72,10 +73,26 @@ Common optional variables:
 
 ```bash
 export EVIRISK_DATASET=ISIC2017
+export EVIRISK_NETWORK=unet_evi
 export EVIRISK_BATCH_SIZE=8
 export EVIRISK_EPOCHS=300
 export EVIRISK_LR=0.001
 export EVIRISK_LAMBDA_REG=0.5
+```
+
+Available network options:
+
+```text
+unet_evi
+ramMamba_evi
+UltraLight_VM_UNet_evi
+```
+
+For example, to train with UltraLight-VMUNet:
+
+```bash
+export EVIRISK_NETWORK=UltraLight_VM_UNet_evi
+python train_evi.py
 ```
 
 ## Testing
@@ -92,4 +109,4 @@ If `--unc-threshold` is not provided, the validation set is used to select the A
 
 ## Notes
 
-The default network is `unet_evi`. The implementation is organized to make the core method easy to train, evaluate, and adapt to other binary segmentation datasets with the same folder structure.
+The default network is `unet_evi`. The optional ramMamba and UltraLight-VMUNet backbones may require additional CUDA-compatible dependencies such as `mamba-ssm` and `triton`.

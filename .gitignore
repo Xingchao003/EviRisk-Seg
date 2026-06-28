@@ -38,3 +38,8 @@ pre_trained_weights/
 *.bak
 *.bak_*
 *.tmp
+
+# local environments
+venv/
+.venv/
+env/

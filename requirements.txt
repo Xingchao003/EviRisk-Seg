@@ -12,3 +12,8 @@ tensorboardX
 thop
 torch
 torchvision
+timm
+einops
+fvcore
+mamba-ssm
+triton
