@@ -1,0 +1,40 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.idea/
+.vscode/
+
+# data, weights, and outputs
+data/*
+!data/.gitkeep
+!data/README.md
+datasets/project_TransUNet.zip
+results/
+checkpoints/
+outputs/
+logs/
+runs/
+wandb/
+tools/wandb/
+pre_trained_weights/
+*.pth
+*.pt
+*.ckpt
+*.pkl
+*.npz
+*.npy
+*.h5
+
+# generated figures and documents
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.svg
+*.pptx
+*.docx
+
+# temporary backups
+*.bak
+*.bak_*
+*.tmp

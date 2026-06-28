@@ -1,0 +1,14 @@
+numpy
+scipy
+scikit-learn
+opencv-python
+Pillow
+matplotlib
+tqdm
+h5py
+SimpleITK
+medpy
+tensorboardX
+thop
+torch
+torchvision
